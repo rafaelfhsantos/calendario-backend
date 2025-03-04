@@ -34,7 +34,7 @@ Este é o backend de um sistema de gerenciamento de eventos, desenvolvido com No
 │   │-- 📂 migrations   
 │   │-- 📂 config  
 │   │-- 📂 repositories  
-│   │-- 📂 routes 
+│   │-- 📂 routes  
 │   │-- 📂 services  
 │   └── ormconfig.ts  
 │   └── server.ts  
