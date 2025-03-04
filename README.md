@@ -27,17 +27,22 @@ Este é o backend de um sistema de gerenciamento de eventos, desenvolvido com No
 📁 calendario-backend  
 │-- 📂 src  
 │   │-- 📂 controllers  
-│   │-- 📂 services  
-│   │-- 📂 repositories  
-│   │-- 📂 middlewares  
-│   │-- 📂 routes  
 │   │-- 📂 entities  
+│   │-- 📂 errors  
+│   │-- 📂 interfaces  
+│   │-- 📂 middlewares  
+│   │-- 📂 migrations   
 │   │-- 📂 config  
+│   │-- 📂 repositories  
+│   │-- 📂 routes 
+│   │-- 📂 services  
+│   └── ormconfig.ts  
 │   └── server.ts  
 │-- 📄 .env  
-│-- 📄 ormconfig.json  
+│-- 📄 package-lock.json  
 │-- 📄 package.json  
-└── README.md  
+│-- README.md  
+└── 📄 tsconfig.json  
 
 ## 🎯 Pré-requisitos
 Antes de rodar o projeto, certifique-se de ter instalado:
