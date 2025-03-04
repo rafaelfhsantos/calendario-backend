@@ -8,8 +8,7 @@ interface DecodedToken {
 
 // Middleware para verificar token JWT
 export const verifyToken = (req: Request, res: Response, next: NextFunction) => {
-    const token = req.headers.authorization?.split(" ")[1]; // Pega o token do header "Authorization"
-    console.log(token)
+    const token = req.headers.authorization?.split(" ")[1]; // Pega o token do header "Authorization"    
     if (!token) {
         res.status(401).json({ message: "Token não fornecido" });
         return

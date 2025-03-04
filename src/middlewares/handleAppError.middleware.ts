@@ -13,7 +13,6 @@ export const handleAppErrorMiddleware = (
       message: error.message,
     });
   }
-
   console.error("❌ Erro inesperado:", error);
 
   res.status(500).json({

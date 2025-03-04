@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, ManyToMany, JoinTable, JoinColumn } from "typeorm";
 import { User } from "./User";
 
 @Entity("eventos")
@@ -14,7 +14,13 @@ export class Evento {
 
     @Column()
     endTime: Date;
+  
 
-    @ManyToOne(() => User, (user) => user.id)
-    user: User;
+    @ManyToOne(() => User, user => user.eventosOwned)
+  @JoinColumn({ name: "owner_id" })
+  owner: User; // Relacionamento com o dono do evento
+
+  @ManyToMany(() => User, user => user.eventosInvited)
+  @JoinTable() // Tabela intermediária para os convidados
+  users: User[];
 }

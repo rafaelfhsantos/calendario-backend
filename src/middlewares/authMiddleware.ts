@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { AppError } from "../errors/appError";
 
 interface DecodedTokenAuth {
-  id: number; // Defina conforme a estrutura do token JWT
+  id: number; 
 }
 
 export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
@@ -18,7 +18,6 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as DecodedTokenAuth;
 
-    // req.user = { id: decoded.id }; // Adiciona o user_id ao objeto da requisição
     req.body.user_id = decoded.id; // Adiciona o user_id ao corpo da requisição
 
     next();

@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany } from "typeorm";
 import { Evento } from "./Evento";
 
 @Entity()
@@ -14,7 +14,12 @@ export class User {
 
     @Column()
     password: string;
+    
+    // Relacionamento com os eventos onde o usuário é dono
+  @OneToMany(() => Evento, evento => evento.owner)
+  eventosOwned: Evento[];
 
-    @OneToMany(() => Evento, (evento) => evento.user)
-    eventos: Evento[];
+  // Relacionamento com os eventos onde o usuário é convidado
+  @ManyToMany(() => Evento, evento => evento.users)
+  eventosInvited: Evento[];
 }
