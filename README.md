@@ -52,9 +52,8 @@ MySQL
 Postman (opcional, para testar as rotas)
 
 ⚙️ Configuração  
-1️⃣ Clone o repositório:  
->git clone https://github.com/seu-usuario/seu-repositorio.git  
->cd calendario-backend
+1️⃣ Clone o repositório 
+
 
 2️⃣ Instale as dependências:
 
